@@ -117,6 +117,12 @@ html{
     align-items: flex-start;
 }
 
+.main_header-right figure img{
+    height: 30rem;
+    border-radius: 28rem;
+    filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.3)); /*This also works like box shadow*/
+}
+
 /* footer style */
 footer{
     width: 100%;
@@ -132,11 +138,11 @@ footer{
 
 @media(max-width: 768px) {
     .main_header_left{
-        height: auto;
+        height: auto; /*height auto se element will automatically adjust its height to allow its content to be displayed correctly*/
         margin: 5rem 0;
     }
 
-    .main_header_left{
+    .main_header_right{
         height: auto;
         margin-top: 3rem;
     }
