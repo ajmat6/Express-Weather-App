@@ -11,18 +11,18 @@
         <div class="row">
             <div class="col-md-10 col-12 mx-auto">
                 <div class="row">
-                    <!-- left side div -->
-                    <div class="col-md-6 col-12 main_header-right align-items-center">
+                    <!-- center div -->
+                    <div class="col-md-11 col-12 main_header_left align-items-center">
                       <figure>
                         <img src="./images/404error.webp" alt="ajmat" class="image-fluid" title="ajmat kathat">
                       </figure>
+
+                      {{!-- Below is the way to give specific data through express app (like props in react) --}}
+                      <h1>{{errorMsg}}</h1>
+                      <p>Invalid Request!</p>
+                      <a href="/"><button>Go Back</button></a>
                     </div>
-                    <!-- right side div -->
-                    <div class="col-md-6 col-12 main_header_left">
-                      <p>Welcome to weather app</p>
-                      <h1>I Am A <span class="text_clr">Mern Stack Developer</span> Programmer and Youtuber</h1>
-                      <a href="https://ajmat6.github.io/TextAnalyzer" target="_blank"><button>About Me</button></a>
-                  </div>
+                </div>
             </div>
         </div>
     </div>

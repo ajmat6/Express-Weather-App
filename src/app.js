@@ -36,11 +36,13 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/weather', (req, res) => { 
-    res.render("welcome to weather page");
+    res.render("weather.hbs");
 });
 
 app.get('*', (req, res) => { //  '*' (abstrick - not sure) is used when the user will enter any random path then what will happen
-    res.render("404error.hbs");
+    res.render("404error.hbs", {
+        errorMsg: 'Opps! Page Not Found'
+    });
 });
 
 app.listen(port, () => {
