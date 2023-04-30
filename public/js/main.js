@@ -1,8 +1,9 @@
 const cityName = document.getElementById('cityName');
 const city_name = document.getElementById('city_name');
 const submitButton = document.getElementById('submitButton');
-const temp = document.getElementById('temp');
+const tempvalue = document.getElementById('temp_value');
 const temp_status = document.getElementById('temp_status');
+const datahide = document.querySelector('.middle_layer');
 
 const getInfo = async(e) => {
     e.preventDefault();
@@ -12,6 +13,7 @@ const getInfo = async(e) => {
     if(cityValue === "")
     {
         city_name.innerText = "Please Enter Some City Name Before you Search!";
+        datahide.classList.add('data_hide');
     }
     
     else
@@ -27,7 +29,7 @@ const getInfo = async(e) => {
             const arrData = [data];
 
             city_name.innerText =  `${arrData[0].name},${arrData[0].sys.country}`;
-            temp.innerText = arrData[0].main.temp;
+            tempvalue.innerText = arrData[0].main.temp;
             // temp_status.innerText = arrData[0].weather[0].main;
 
             //showing clouds, clear and sunny temp_status:
@@ -51,11 +53,12 @@ const getInfo = async(e) => {
             {
                 temp_status.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color: #a4b0be;'></i>"
             }
+
+            datahide.classList.remove('data_hide');
         }catch{
             //Error to show when user enter wrong/unknown city name:
             city_name.innerText = "Please Enter The City Name Properly";
-            temp.innerText = "";
-            temp_status.innerText = "";
+            datahide.classList.add('data_hide');
         }
 
     }
@@ -63,3 +66,23 @@ const getInfo = async(e) => {
 
 
 submitButton.addEventListener('click', getInfo);
+
+const getday = () => {
+    let dayArr = new Array(7);
+    dayArr[0] = "Sunday";
+    dayArr[1] = "Monday";
+    dayArr[2] = "Tuesday";
+    dayArr[3] = "Wednesday";
+    dayArr[4] = "Thursday";
+    dayArr[5] = "Friday";
+    dayArr[6] = "Saturday";
+    
+    let currTime = new Date();
+    let weekday = dayArr[currTime.getDay()];
+    let days = document.getElementById('day');
+    days.innerText = weekday;
+}
+
+getday();
+
+
