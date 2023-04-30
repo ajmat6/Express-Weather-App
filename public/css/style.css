@@ -213,7 +213,7 @@ sup{
 }
 
 .data_hide{
-    visibility: hidden;
+    /* visibility: hidden; */
     transition: all 0.3s linear;
 }
 
